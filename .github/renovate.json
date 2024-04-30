@@ -1,0 +1,20 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended"
+    ],
+    "customManagers": [
+        {
+            "description": "omnictl version as Docker build argument",
+            "customType": "regex",
+            "fileMatch": [
+                "Dockerfile"
+            ],
+            "matchStrings": [
+                "OMNICTL_VERSION_TAG\\s*=\\s*(?<currentValue>v[\\d.]+)"
+            ],
+            "depNameTemplate": "siderolabs/omni",
+            "datasourceTemplate": "github-releases"
+        }
+    ]
+}
