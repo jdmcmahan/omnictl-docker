@@ -1,0 +1,27 @@
+name: Create GitHub Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Dockerfile
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get omnictl version
+        id: get-omnictl-version
+        run: echo "version=$(awk -F '=' '/^ARG OMNICTL_VERSION_TAG/{ print $2 }' ./Dockerfile)" >> "$GITHUB_OUTPUT"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          tag_name: ${{ steps.get-omnictl-version.outputs.version }}
+          generate_release_notes: true
