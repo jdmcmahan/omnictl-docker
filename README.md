@@ -7,7 +7,7 @@ in a container. Use this image to execute any `omnictl` command as part of a con
 
 ### Getting Started
 
-Before using this action, you must create an Omni service account to authenticate with Sidero Omni.
+Before running this Docker image, you must create an Omni service account to authenticate with Sidero Omni.
 See https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/ for more information about creating
 a service account.
 
