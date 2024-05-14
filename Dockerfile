@@ -12,6 +12,6 @@ RUN apk add --update --no-cache wget
 RUN wget -q -O ${TARGET_EXECUTABLE_PATH}/omnictl ${OMNICTL_DOWNLOAD_URL} && chmod u+x ${TARGET_EXECUTABLE_PATH}/omnictl
 
 ENV OMNI_ENDPOINT=
-ENV OMNI_SERVICE_ACCOUNT=
+ENV OMNI_SERVICE_ACCOUNT_KEY=
 
 CMD ["omnictl", "--version"]

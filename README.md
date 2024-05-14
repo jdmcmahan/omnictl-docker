@@ -15,17 +15,17 @@ a service account.
 
 #### Required parameters
 
-| Parameter                 | Description                                                                                                                                                                                                 |
-|:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `-e OMNI_ENDPOINT`        | The Omni endpoint URL generated for your service account. See https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/ for more information about creating a service account.        |
-| `-e OMNI_SERVICE_ACCOUNT` | The Omni service account key generated for your service account. See https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/ for more information about creating a service account. |
+| Parameter                     | Description                                                                                                                                                                                                 |
+|:------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `-e OMNI_ENDPOINT`            | The Omni endpoint URL generated for your service account. See https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/ for more information about creating a service account.        |
+| `-e OMNI_SERVICE_ACCOUNT_KEY` | The Omni service account key generated for your service account. See https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/ for more information about creating a service account. |
 
 #### Examples
 
 ##### Docker CLI
 
 ```shell
-$ docker run -it --rm -e OMNI_ENDPOINT=https://my.omni.siderolabs.io:443 -e OMNI_SERVICE_ACCOUNT=blah mcmahan/omnictl:latest omnictl cluster status mycluster
+$ docker run -it --rm -e OMNI_ENDPOINT=https://my.omni.siderolabs.io:443 -e OMNI_SERVICE_ACCOUNT_KEY=blah mcmahan/omnictl:latest omnictl cluster status mycluster
 ```
 
 ##### Docker Compose
@@ -38,7 +38,7 @@ services:
     tty: true
     environment:
       - OMNI_ENDPOINT=https://my.omni.siderolabs.io:443
-      - OMNI_SERVICE_ACCOUNT=blah
+      - OMNI_SERVICE_ACCOUNT_KEY=blah
     command:
       - /bin/sh
       - -c
