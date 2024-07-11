@@ -3,6 +3,17 @@
     "extends": [
         "config:recommended"
     ],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "matchCurrentVersion": "!/^0/",
+            "automerge": true,
+            "ignoreTests": true
+        }
+    ],
     "customManagers": [
         {
             "description": "omnictl version as Docker build argument",
