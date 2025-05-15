@@ -9,17 +9,19 @@
                 "minor",
                 "patch"
             ],
-            "matchPackagePatterns": "omni",
             "automerge": true,
-            "ignoreTests": true
+            "ignoreTests": true,
+            "matchPackageNames": [
+                "/omni/"
+            ]
         }
     ],
     "customManagers": [
         {
             "description": "omnictl version as Docker build argument",
             "customType": "regex",
-            "fileMatch": [
-                "Dockerfile"
+            "managerFilePatterns": [
+                "/Dockerfile/"
             ],
             "matchStrings": [
                 "OMNICTL_VERSION_TAG\\s*=\\s*(?<currentValue>v[\\d.]+)"
