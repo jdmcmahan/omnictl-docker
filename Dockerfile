@@ -20,5 +20,7 @@ COPY --from=builder --chown=nonroot:nonroot --chmod=u+x /staging/omnictl ${TARGE
 ENV OMNI_ENDPOINT=
 ENV OMNI_SERVICE_ACCOUNT_KEY=
 
+USER nonroot
+
 ENTRYPOINT ["omnictl"]
 CMD ["--help"]
