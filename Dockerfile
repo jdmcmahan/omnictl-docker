@@ -17,9 +17,6 @@ ARG TARGET_EXECUTABLE_PATH=/usr/local/bin
 
 COPY --from=builder --chown=nonroot:nonroot --chmod=u+x /staging/omnictl ${TARGET_EXECUTABLE_PATH}/omnictl
 
-ENV OMNI_ENDPOINT=
-ENV OMNI_SERVICE_ACCOUNT_KEY=
-
 USER nonroot
 
 CMD ["omnictl", "--version"]
