@@ -22,5 +22,4 @@ ENV OMNI_SERVICE_ACCOUNT_KEY=
 
 USER nonroot
 
-ENTRYPOINT ["omnictl"]
-CMD ["--help"]
+CMD ["omnictl", "--version"]
