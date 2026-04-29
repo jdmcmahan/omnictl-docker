@@ -20,7 +20,7 @@ jobs:
         run: echo "version=$(awk -F '=' '/^ARG OMNICTL_VERSION_TAG/{ print $2 }' ./Dockerfile)" >> "$GITHUB_OUTPUT"
 
       - name: Create release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           token: ${{ secrets.RELEASES_TOKEN }}
           tag_name: ${{ steps.get-omnictl-version.outputs.version }}
